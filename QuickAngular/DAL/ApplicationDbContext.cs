@@ -3,16 +3,14 @@
 // Email: support@ebenmonney.com
 // ====================================================
 
+using System;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using DAL.Models;
+using DAL.Models.Interfaces;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading;
-using DAL.Models.Interfaces;
 
 namespace DAL
 {
@@ -28,7 +26,9 @@ namespace DAL
 
 
         public ApplicationDbContext(DbContextOptions options) : base(options)
-        { }
+        {
+            var t = true;
+        }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
